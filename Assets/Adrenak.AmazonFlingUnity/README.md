@@ -20,6 +20,7 @@ public class FlingTest : MonoBehaviour {
     List<RemoteMediaPlayer> players = new List<RemoteMediaPlayer>();
 
     void Start() {
+        AmazonFlingUnityConfig.EnableDebugging = true;
         controller = new DiscoveryController();
         controller.Start(new IDiscoveryListener()
             .OnPlayerDiscovered(discovered => {
