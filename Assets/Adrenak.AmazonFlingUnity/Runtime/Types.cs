@@ -25,11 +25,11 @@ namespace Adrenak.AmazonFlingUnity {
         public string extra;
 
         /// <summary>
-        /// Constructs an instnace using an AndroidJavaObject
+        /// Constructs an instnace using an AndroidJavaObject.
         /// </summary>
         /// <param name="obj">The AndroidJavaObject to use for construction</param>
         /// <returns></returns>
-        public static MediaPlayerInfo From(AndroidJavaObject obj) {
+        internal static MediaPlayerInfo From(AndroidJavaObject obj) {
             return new MediaPlayerInfo {
                 source = obj.Call<string>("getSource"),
                 metadata = obj.Call<string>("getMetadata"),
