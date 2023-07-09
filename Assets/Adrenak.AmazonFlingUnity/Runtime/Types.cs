@@ -74,11 +74,11 @@ namespace Adrenak.AmazonFlingUnity {
         public bool volumeSet;
 
         /// <summary>
-        /// Constructs an instance using an AndroidJavaObject
+        /// Constructs an instance using an AndroidJavaObject.
         /// </summary>
         /// <param name="statusObj">The AndroidJavaObject to use for construction.</param>
         /// <returns></returns>
-        public static MediaPlayerStatus From(AndroidJavaObject statusObj) {
+        internal static MediaPlayerStatus From(AndroidJavaObject statusObj) {
             return new MediaPlayerStatus {
                 mediaState = (MediaState)Enum.Parse(typeof(MediaState), statusObj.Call<AndroidJavaObject>("getState").Call<string>("toString")),
                 mediaCondition = (MediaCondition)Enum.Parse(typeof(MediaCondition), statusObj.Call<AndroidJavaObject>("getCondition").Call<string>("toString")),
